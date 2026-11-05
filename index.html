@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áo Dài - Vẻ Đẹp Truyền Thống Việt Nam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fffaf5;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #c41e3a, #8b0000);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1583391733956-375ff54add2a?w=1200') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #c41e3a;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #a01830;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #c41e3a;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #c41e3a;
+            margin: 10px auto 0;
+        }
+
+        /* Giới thiệu */
+        .gioi-thieu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .gioi-thieu-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .gioi-thieu-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .gioi-thieu-img {
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+        }
+
+        .gioi-thieu-img img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Đặc điểm */
+        .dac-diem {
+            background-color: #fff0f0;
+            border-radius: 16px;
+            padding: 40px 20px;
+        }
+
+        .dac-diem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #c41e3a;
+            margin-bottom: 12px;
+        }
+
+        /* Lịch sử */
+        .lich-su p {
+            text-align: justify;
+            margin-bottom: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Call to action */
+        .cta {
+            background: linear-gradient(135deg, #c41e3a, #8b0000);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 16px;
+            margin: 40px auto;
+            max-width: 1100px;
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .cta h2::after {
+            background: white;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>ÁO DÀI VIỆT NAM</h1>
+        <p>Biểu tượng văn hóa & vẻ đẹp truyền thống</p>
+        <nav>
+            <a href="#gioi-thieu">Giới thiệu</a>
+            <a href="#dac-diem">Đặc điểm</a>
+            <a href="#lich-su">Lịch sử</a>
+            <a href="#lien-he">Liên hệ</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Vẻ Đẹp Áo Dài</h2>
+            <p>Khám phá biểu tượng văn hóa Việt Nam – nơi truyền thống và hiện đại hòa quyện</p>
+            <a href="#gioi-thieu" class="btn">Tìm hiểu ngay</a>
+        </div>
+    </section>
+
+    <!-- Giới thiệu -->
+    <section id="gioi-thieu">
+        <h2>Giới thiệu về Áo Dài</h2>
+        <div class="gioi-thieu">
+            <div class="gioi-thieu-text">
+                <p>
+                    Áo dài là trang phục truyền thống đặc trưng của người Việt Nam, 
+                    mang vẻ đẹp thanh lịch, duyên dáng và đầy chất thơ. 
+                    Với thiết kế ôm sát thân trên, xẻ tà hai bên và quần dài ống rộng, 
+                    áo dài tôn lên vẻ đẹp hình thể người phụ nữ một cách tinh tế.
+                </p>
+                <p>
+                    Không chỉ là trang phục, áo dài còn là biểu tượng văn hóa, 
+                    thể hiện bản sắc dân tộc và niềm tự hào của người Việt. 
+                    Ngày nay, áo dài được mặc trong nhiều dịp quan trọng như lễ hội, 
+                    đám cưới, ngày Tết và cả trong đời sống hiện đại.
+                </p>
+            </div>
+            <div class="gioi-thieu-img">
+                <img src="https://images.unsplash.com/photo-1594737625785-c668baea5dea?w=500" alt="Áo dài truyền thống">
+            </div>
+        </div>
+    </section>
+
+    <!-- Đặc điểm -->
+    <section class="dac-diem" id="dac-diem">
+        <h2>Đặc điểm nổi bật</h2>
+        <div class="dac-diem-grid">
+            <div class="card">
+                <h3>Thanh lịch</h3>
+                <p>Thiết kế ôm sát phần thân trên, tôn lên vóc dáng mềm mại và duyên dáng của người phụ nữ Việt.</p>
+            </div>
+            <div class="card">
+                <h3>Truyền thống</h3>
+                <p>Mang đậm bản sắc văn hóa dân tộc, được lưu truyền qua nhiều thế hệ và gắn liền với lịch sử Việt Nam.</p>
+            </div>
+            <div class="card">
+                <h3>Hiện đại</h3>
+                <p>Được cách tân với nhiều kiểu dáng, chất liệu và họa tiết mới, phù hợp với xu hướng thời trang ngày nay.</p>
+            </div>
+            <div class="card">
+                <h3>Đa dạng</h3>
+                <p>Có thể mặc trong nhiều dịp: học đường, công sở, lễ hội, đám cưới hay những sự kiện quan trọng.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lịch sử -->
+    <section id="lich-su" class="lich-su">
+        <h2>Lịch sử hình thành</h2>
+        <p>
+            Áo dài có nguồn gốc từ áo ngũ thân thời nhà Nguyễn. 
+            Vào thế kỷ 18–19, trang phục này được cải tiến dần để trở nên gọn gàng và thanh thoát hơn.
+        </p>
+        <p>
+            Đến thập niên 1930, họa sĩ Cát Tường (Le Mur) đã cách tân áo dài thành kiểu dáng hiện đại, 
+            ôm sát thân hơn và kết hợp với quần dài. Từ đó, áo dài trở thành biểu tượng của vẻ đẹp Việt Nam 
+            và được cả thế giới biết đến.
+        </p>
+        <p>
+            Ngày nay, áo dài không chỉ dành cho phụ nữ mà còn có phiên bản dành cho nam giới, 
+            thể hiện sự trang nghiêm và lịch sự trong các dịp lễ hội.
+        </p>
+    </section>
+
+    <!-- Call to Action -->
+    <div class="cta" id="lien-he">
+        <h2>Khám phá vẻ đẹp áo dài</h2>
+        <p>Hãy trải nghiệm và lan tỏa vẻ đẹp truyền thống của dân tộc Việt Nam</p>
+        <a href="#" class="btn" style="background:#fff; color:#c41e3a;">Liên hệ ngay</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Áo Dài Việt Nam</p>
+        <p>Giữ gìn và phát huy vẻ đẹp truyền thống dân tộc</p>
+    </footer>
+
+</body>
+</html>
